@@ -1,0 +1,19 @@
+{
+  "name": "name-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "author": "Andi Luke",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
