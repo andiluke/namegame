@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+
+    "start": "tsc && concurrently \"tsc -w\" \"nodemon app.js\" ",
+    "postinstall": "typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings"
   },
   "author": "Andi Luke",
   "license": "ISC",
