@@ -6,7 +6,9 @@ global installs
 * mongodb (database)
 * nodemon (watches server/app file changes & restarts server as needed)
 
-
+ToDos:
+* switch to mlab db hosting (free) instead of local
+* add angular
 
 
 helpful links
