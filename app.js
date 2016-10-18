@@ -1,33 +1,13 @@
 var express = require('express');
 var app = express();
-
-var MongoClient = require('mongodb').MongoClient;
-var database;
-
-MongoClient.connect('mongodb://localhost:27017/babynames', function(err, db) {
-  if (err) {
-    throw err;
-  }
-  database = db;
-  database.collection('names').find().toArray(function(err, result) {
-    if (err) {
-      throw err;
-    }
-    console.log(result);
-  });
-});
-
-var getNames = function(cb) {
-    database.collection('names').find().toArray(cb);
-}
-
+var database = require('./database');
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
 app.get('/api/names', function(req, res) {
-    getNames(function(err, data){
+    database.getNames(function(err, data){
         if (err){
             console.log(err);
             return res(err);
