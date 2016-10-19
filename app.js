@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var database = require('./database');
 
-
+// serving angular assets
 app.use('/node_modules', express.static('node_modules'));
 app.use('/systemjs.config.js', express.static('systemjs.config.js'));
 app.use('/app', express.static('app'));
