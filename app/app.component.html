@@ -3,17 +3,21 @@
     {{ title }}
 </header>
 
-<nav>
-    <label>Add a Name</label>
-    <input [(ngModel)]="babyname.name" placeholder="name">
-</nav>
-
 <article>
-    <div>list goes here</div>
     <div>
+        <h3>list goes here</h3>
+        <ul class="namelist">
+            <li *ngFor="let babyname of babynames" 
+            (click)="onSelect(babyname)"
+            [class.selected]="babyname === selectedBabyname">
+                {{babyname.id}}: {{babyname.name}}
+            </li>    
+        </ul>
+    </div>
+    <div *ngIf="selectedBabyname">
         <h3>details go here. this will really be on a detail page</h3>
-        <div>id: {{ babyname.id }}</div>
-        <div>name: {{ babyname.name }}</div>
+        <div>id: {{ selectedBabyname.id }}</div>
+        <div>name: <input [(ngModel)]="selectedBabyname.name" placeholder="name"></div>
         <div>middle names: coming soon</div>
         <div>meaning, details, etc: coming soon</div>
     </div>
