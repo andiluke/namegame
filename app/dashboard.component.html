@@ -1,0 +1,4 @@
+<h3>Top Names</h3>
+<ul>
+    <li *ngFor="let babyname of babynames" (click)="gotoDetail(babyname)">{{babyname.name}}</li>
+</ul>

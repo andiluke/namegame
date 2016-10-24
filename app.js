@@ -20,6 +20,10 @@ app.get('/names', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/detail/:id', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
+
 app.get('/api/names', function(req, res) {
     database.getNames(function(err, data){
         if (err){

@@ -26,6 +26,10 @@ import { DashboardComponent } from './dashboard.component';
         {
           path: 'names',
           component: NamesComponent
+        },
+        {
+          path: 'detail/:id',
+          component: NameDetailComponent
         }
       ]) 
     ],

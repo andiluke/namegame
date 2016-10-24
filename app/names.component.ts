@@ -5,7 +5,7 @@ import { NameService } from './name.service';
 
 @Component({
   selector: 'my-names',
-  templateUrl: 'app/names.component.html'
+  templateUrl: '/app/names.component.html'
 })
 export class NamesComponent implements OnInit {
     constructor(private nameService: NameService) {}
