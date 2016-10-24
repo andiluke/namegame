@@ -13,10 +13,13 @@ global installs
 ToDos:
 * go through angular tutorial to build out basic front end
 * customize frontend
+* edit names
+* add names
 * use node-curl to scrape name details from somewhere
 * switch to mlab instead of local db
 * switch to cloud hosted rather than local
 * figure out express routing better, like send all the angualr urls to angular instead of dealing with each individually
+* style??
 
 
 helpful links
