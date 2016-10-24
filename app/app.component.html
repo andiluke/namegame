@@ -14,11 +14,5 @@
             </li>    
         </ul>
     </div>
-    <div *ngIf="selectedBabyname">
-        <h3>details go here. this will really be on a detail page</h3>
-        <div>id: {{ selectedBabyname.id }}</div>
-        <div>name: <input [(ngModel)]="selectedBabyname.name" placeholder="name"></div>
-        <div>middle names: coming soon</div>
-        <div>meaning, details, etc: coming soon</div>
-    </div>
+    <name-detail [babyname]="selectedBabyname"></name-detail>
 </article>
