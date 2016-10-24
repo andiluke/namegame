@@ -12,17 +12,18 @@ global installs
 
 ToDos:
 * go through angular tutorial to build out basic front end
-* switch to mlab db hosting (free) instead of local
 * customize frontend
 * use node-curl to scrape name details from somewhere
 * switch to mlab instead of local db
 * switch to cloud hosted rather than local
+* figure out express routing better, like send all the angualr urls to angular instead of dealing with each individually
 
 
 helpful links
 * Mongo + Express: https://zellwk.com/blog/crud-express-mongodb/
 * Angular quickstart https://angular.io/docs/ts/latest/quickstart.html
 * Angular tutorial https://angular.io/docs/ts/latest/tutorial/toh-pt1.html
+* Express routing: https://expressjs.com/en/guide/routing.html
 
 name sites:
 http://www.behindthename.com/

@@ -12,6 +12,14 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/dashboard', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/names', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
+
 app.get('/api/names', function(req, res) {
     database.getNames(function(err, data){
         if (err){
