@@ -5,7 +5,7 @@ import { BABYNAMES } from './mock-names';
 
 @Injectable()
 export class NameService {
-    getNames(): Babyname[] {
-        return BABYNAMES;
+    getNames(): Promise<Babyname[]> {
+        return Promise.resolve(BABYNAMES);
     }
 }

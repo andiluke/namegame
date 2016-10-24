@@ -20,6 +20,6 @@ export class AppComponent implements OnInit {
         this.selectedBabyname = babyname;
     }
     getNames(): void {
-      this.babynames = this.nameService.getNames();
+      this.nameService.getNames().then(babynames => this.babynames = babynames);
     }
  }
