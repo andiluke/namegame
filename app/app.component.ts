@@ -1,25 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Babyname } from './babyname';
-import { NameService } from './name.service';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: 'app/app.component.html',
-  providers: [NameService]
+    selector: 'my-app',
+    template: `
+        <h1>{{title}}</h1>
+        <my-names></my-names>
+    `
 })
-export class AppComponent implements OnInit {
-    constructor(private nameService: NameService) {}
-    title = 'Baby Name Tracker';
-    selectedBabyname: Babyname;
-    babynames: Babyname[];
-    ngOnInit(): void {
-      this.getNames();
-    }
-    onSelect(babyname: Babyname): void {
-        this.selectedBabyname = babyname;
-    }
-    getNames(): void {
-      this.nameService.getNames().then(babynames => this.babynames = babynames);
-    }
- }
+export class AppComponent{
+    title = 'Baby Names!';
+}
