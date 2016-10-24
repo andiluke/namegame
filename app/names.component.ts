@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Babyname } from './babyname';
 import { NameService } from './name.service';
 
 @Component({
   selector: 'my-names',
-  templateUrl: '/app/names.component.html'
+  moduleId: module.id,
+  templateUrl: 'names.component.html'
 })
 export class NamesComponent implements OnInit {
-    constructor(private nameService: NameService) {}
+    constructor(
+      private nameService: NameService,
+      private router: Router  
+    ) {}
     selectedBabyname: Babyname;
     babynames: Babyname[];
     ngOnInit(): void {
@@ -19,5 +24,8 @@ export class NamesComponent implements OnInit {
     }
     getNames(): void {
       this.nameService.getNames().then(babynames => this.babynames = babynames);
+    }
+    gotoDetail(): void {
+      this.router.navigate(['/detail', this.selectedBabyname.id]);
     }
  }

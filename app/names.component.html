@@ -9,5 +9,8 @@
             </li>    
         </ul>
     </div>
-    <name-detail [babyname]="selectedBabyname"></name-detail>
+    <div *ngIf="selectedBabyname">
+        <h2>{{ selectedBabyname.name }}</h2>
+        <button (click)="gotoDetail()">View Details</button>
+    </div>    
 </article>

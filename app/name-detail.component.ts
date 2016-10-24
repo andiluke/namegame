@@ -7,7 +7,7 @@ import { NameService } from './name.service';
 
 @Component({
     selector: 'name-detail',
-    templateUrl: '/app/name-detail.component.html',
+    templateUrl: 'name-detail.component.html',
     moduleId: module.id,
 })
 export class NameDetailComponent implements OnInit{
