@@ -1,24 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Babyname } from './babyname';
-
-const BABYNAMES: Babyname[] = [
-  { id: 10, name: 'Violet'},
-  { id: 11, name: 'Sequoia' },
-  { id: 12, name: 'Sienna' },
-  { id: 13, name: 'Sierra' },
-  { id: 14, name: 'Tara' }
-];
+import { NameService } from './name.service';
 
 @Component({
   selector: 'my-app',
-  templateUrl: 'app/app.component.html'
+  templateUrl: 'app/app.component.html',
+  providers: [NameService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+    constructor(private nameService: NameService) {}
     title = 'Baby Name Tracker';
     selectedBabyname: Babyname;
-    babynames = BABYNAMES;
+    babynames: Babyname[];
+    ngOnInit(): void {
+      this.getNames();
+    }
     onSelect(babyname: Babyname): void {
         this.selectedBabyname = babyname;
+    }
+    getNames(): void {
+      this.babynames = this.nameService.getNames();
     }
  }
