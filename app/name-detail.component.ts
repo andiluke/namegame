@@ -30,4 +30,8 @@ export class NameDetailComponent implements OnInit{
     goBack(): void {
         this.location.back();
     }
+    save(): void {
+        this.nameService.update(this.babyname)
+            .then(() => this.goBack());
+    }
 }

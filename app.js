@@ -8,6 +8,7 @@ app.use('/systemjs.config.js', express.static('systemjs.config.js'));
 app.use('/app', express.static('app'));
 app.use('/assets', express.static('assets'));
 
+// angular got this
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
@@ -23,6 +24,7 @@ app.get('/names', function(req, res){
 app.get('/detail/:id', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
+// end of angular urls
 
 app.get('/api/names', function(req, res) {
     database.getNames(function(err, data){
@@ -41,11 +43,15 @@ app.get('/api/name/:id', function(req, res) {
     res.send('this should be json of name id: ' + req.params.id);
 });
 
-app.post('/api/name', function(ref, res) {
+app.post('/api/name', function(req, res) {
     res.send('this would be posting a name to the db');
 });
 
-app.delete('api/name', function(req, res){
+app.put('/api/name', function(req, res) {
+    res.send('this would be updating a name');
+});
+
+app.delete('/api/name', function(req, res){
     res.send('this would be deleteing a name');
 });
 

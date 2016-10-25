@@ -13,7 +13,7 @@ global installs
 ToDos:
 * go through angular tutorial to build out basic front end
 * customize frontend
-* edit names
+* edit name info (middle names, rating, variant ??)
 * add names
 * use node-curl to scrape name details from somewhere
 * switch to mlab instead of local db

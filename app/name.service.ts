@@ -13,6 +13,8 @@ export class NameService {
         private http: Http
     ) {}
     private namesUrl = '/api/names';
+    private nameUrl = '/api/name/';
+    private headers = new Headers({'Content-Type': 'application/json'});
 
     getNames(): Promise<Babyname[]> {
         return this.http.get(this.namesUrl)
@@ -24,6 +26,11 @@ export class NameService {
     getName(name: string): Promise<Babyname> {
         return this.getNames()
             .then(babynames => babynames.find(babyname => babyname.name === name));
+    }
+//Promise<Babyname> 
+    update(babyname: Babyname): void{
+        const url = this.nameUrl + babyname.name;
+        console.log(url);
     }
 
     private handleError(error: any): Promise<any> {
