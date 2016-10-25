@@ -27,10 +27,26 @@ export class NameService {
         return this.getNames()
             .then(babynames => babynames.find(babyname => babyname.name === name));
     }
-//Promise<Babyname> 
-    update(babyname: Babyname): void{
-        const url = this.nameUrl + babyname.name;
+
+    getName2(name: string): Promise<Babyname> {
+        let url = this.nameUrl + name;
+        console.log('hi from getName2');
         console.log(url);
+        return this.http.get(url)
+            .toPromise()
+            .then(response => response.json() as Babyname)
+            .catch(this.handleError);
+    }
+//Promise<Babyname> 
+    update(babyname: Babyname): Promise<Babyname>{
+        const url = this.nameUrl + babyname.name;
+        console.log(babyname);
+        this.getName2(babyname.name)
+            .then(function(response){
+                console.log('promise returned');
+                console.log(response);
+            })
+            .catch(this.handleError);
     }
 
     private handleError(error: any): Promise<any> {

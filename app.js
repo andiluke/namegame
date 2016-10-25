@@ -21,7 +21,7 @@ app.get('/names', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/detail/:id', function(req, res){
+app.get('/detail/:name', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
 // end of angular urls
@@ -39,8 +39,17 @@ app.get('/api/names', function(req, res) {
     })
 });
 
-app.get('/api/name/:id', function(req, res) {
-    res.send('this should be json of name id: ' + req.params.id);
+app.get('/api/name/:name', function(req, res) {
+    console.log('getting info for: ' + req.params.name);
+    database.getName(req.params.name, function(err,data){
+        if (err){
+            console.log(err);
+            return res(err);
+        } else {
+            console.log(data);
+            return res.json(data);
+        }
+    });
 });
 
 app.post('/api/name', function(req, res) {
