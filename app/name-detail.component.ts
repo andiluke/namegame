@@ -30,7 +30,20 @@ export class NameDetailComponent implements OnInit{
     goBack(): void {
         this.location.back();
     }
+    removeMiddleName(middle:string): void {
+        console.log('remove middle name: ' + middle);
+        console.log(this.babyname.middle);
+        var i = this.babyname.middle.indexOf(middle);
+        if (0<= i){
+            this.babyname.middle.splice(i, 1);
+        }
+        console.log(this.babyname.middle);
+    }
+
     save(): void {
+        // todo: make this work
+        // * no changes to first name
+        // * update changes to middle names
         this.nameService.update(this.babyname)
             .then(() => this.goBack());
     }

@@ -27,6 +27,7 @@ helpful links
 * Angular quickstart https://angular.io/docs/ts/latest/quickstart.html
 * Angular tutorial https://angular.io/docs/ts/latest/tutorial/toh-pt1.html
 * Express routing: https://expressjs.com/en/guide/routing.html
+* mongo array (middle names): https://docs.mongodb.com/manual/reference/operator/update/push/
 
 name sites:
 http://www.behindthename.com/
