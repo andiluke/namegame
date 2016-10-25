@@ -13,7 +13,7 @@ export class NameService {
         private http: Http
     ) {}
     private namesUrl = '/api/names';
-    private nameUrl = '/api/name/';
+    private nameUrl = '/api/name';
     private headers = new Headers({'Content-Type': 'application/json'});
 
     getNames(): Promise<Babyname[]> {
@@ -37,16 +37,22 @@ export class NameService {
             .then(response => response.json() as Babyname)
             .catch(this.handleError);
     }
-//Promise<Babyname> 
+
     update(babyname: Babyname): Promise<Babyname>{
-        const url = this.nameUrl + babyname.name;
         console.log(babyname);
+        console.log(JSON.stringify(babyname));
+        return this.http.put(this.nameUrl, JSON.stringify(babyname), {headers: this.headers})
+            .toPromise()
+            .then(() => babyname)
+            .catch(this.handleError);
+        /*
         this.getName2(babyname.name)
             .then(function(response){
                 console.log('promise returned');
                 console.log(response);
             })
             .catch(this.handleError);
+        */
     }
 
     private handleError(error: any): Promise<any> {

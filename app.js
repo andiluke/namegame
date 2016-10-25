@@ -1,6 +1,13 @@
 var express = require('express');
-var app = express();
+var bodyParser = require('body-parser');
+
 var database = require('./database');
+
+var app = express();
+
+
+// for parsing passed json
+app.use(bodyParser.json())
 
 // serving angular assets
 app.use('/node_modules', express.static('node_modules'));
@@ -57,7 +64,9 @@ app.post('/api/name', function(req, res) {
 });
 
 app.put('/api/name', function(req, res) {
-    res.send('this would be updating a name');
+    console.log('this would be updating a name');
+    console.log(req.body);
+    database.updateName(req.body);
 });
 
 app.delete('/api/name', function(req, res){
