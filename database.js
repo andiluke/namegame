@@ -28,7 +28,7 @@ module.exports.updateName = function(babyname, cb) {
   database.collection('names').update(
     {name: babyname.name},
     {
-      $addToSet: {"middle": {$each: babyname.middle}}
+      $set: {"middle": babyname.middle}
     }
   )
 }

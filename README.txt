@@ -13,9 +13,9 @@ global installs
 ToDos:
 * customize frontend
 * show something on save
+* bug: saving a middle name when none exist fails
 * clear field after middle name added
 * add/edit ratings
-* delete middle names
 * add names
 * use node-curl to scrape name details from somewhere
 * switch to mlab instead of local db
