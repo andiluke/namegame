@@ -26,6 +26,6 @@ export class NamesComponent implements OnInit {
       this.nameService.getNames().then(babynames => this.babynames = babynames);
     }
     gotoDetail(): void {
-      this.router.navigate(['/detail', this.selectedBabyname.id]);
+      this.router.navigate(['/detail', this.selectedBabyname.name]);
     }
  }

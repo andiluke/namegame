@@ -22,8 +22,8 @@ export class NameDetailComponent implements OnInit{
 
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
-            let id = +params['id'];
-            this.nameService.getName(id)
+            let name = params['name'];
+            this.nameService.getName(name)
                 .then(babyname => this.babyname = babyname);
         });
     }
