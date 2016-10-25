@@ -12,6 +12,8 @@ global installs
 
 ToDos:
 * customize frontend
+* show something on save
+* clear field after middle name added
 * add/edit ratings
 * delete middle names
 * add names
