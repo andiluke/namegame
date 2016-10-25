@@ -40,6 +40,20 @@ export class NameDetailComponent implements OnInit{
         console.log(this.babyname.middle);
     }
 
+    addMiddleName(newMiddle:string): void {
+        newMiddle = newMiddle.trim();
+        var errors = 0;
+        if (newMiddle.length <= 0) {
+            errors++;
+        }
+        if (this.babyname.middle.indexOf(newMiddle) >= 0) {
+            errors++;
+        }
+        if (errors === 0) {
+            this.babyname.middle.push(newMiddle);
+        }
+    }
+
     save(): void {
         // todo: make this work
         // * no changes to first name

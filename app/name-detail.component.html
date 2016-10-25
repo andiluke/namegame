@@ -9,7 +9,8 @@
                 <button (click)="removeMiddleName(middle)">x</button></li>
         </ul>  
         <label>Add Middle Name:</label>
- 
+        <input #newMiddle placeholder="Add Middle Name">
+        <button (click)="addMiddleName(newMiddle.value)">add</button>
     </div>
     <div>meaning, details, etc: coming soon</div>
     <button (click)="goBack()">Back</button>
