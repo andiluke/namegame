@@ -11,9 +11,9 @@ global installs
 * nodemon (watches server/app file changes & restarts server as needed)
 
 ToDos:
-* go through angular tutorial to build out basic front end
 * customize frontend
-* edit name info (middle names, rating, variant ??)
+* add/edit ratings
+* delete middle names
 * add names
 * use node-curl to scrape name details from somewhere
 * switch to mlab instead of local db
