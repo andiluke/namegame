@@ -22,6 +22,13 @@ const routes: Routes= [
     {
         path: 'detail/:name',
         component: NameDetailComponent
+    },
+    {
+        path: 'add',
+        component: NameDetailComponent,
+        data: {
+            new: 'new'
+        }
     }
 ];
 

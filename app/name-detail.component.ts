@@ -19,12 +19,19 @@ export class NameDetailComponent implements OnInit{
 
     @Input()
     babyname: Babyname;
-
+    newName:Boolean = false;
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
-            let name = params['name'];
-            this.nameService.getName(name)
-                .then(babyname => this.babyname = babyname);
+            if (typeof(params['name']) === 'undefined') {
+                // this is a new name we're adding
+                this.newName = true;
+                this.babyname = new Babyname;
+            } else {
+                // we're editing an existing name
+                let name = params['name'];
+                this.nameService.getName(name)
+                    .then(babyname => this.babyname = babyname);
+            }
         });
     }
     goBack(): void {
@@ -58,7 +65,11 @@ export class NameDetailComponent implements OnInit{
         // todo: make this work
         // * no changes to first name
         // * update changes to middle names
-        this.nameService.update(this.babyname)
+        if (this.newName === true) {
+            console.log('add new name now');
+        } else {
+            this.nameService.update(this.babyname)
             .then(() => this.goBack());
+        }
     }
 }

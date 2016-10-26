@@ -31,6 +31,9 @@ app.get('/names', function(req, res){
 app.get('/detail/:name', function(req, res){
     res.sendFile(__dirname + '/index.html');
 });
+app.get('/add', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+});
 // end of angular urls
 
 app.get('/api/names', function(req, res) {

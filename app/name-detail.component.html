@@ -1,8 +1,10 @@
-<div *ngIf="babyname">
+<!-- *ngIf="babyname" -->
+<div>
     <h3>name details</h3>
+    <div>newName: {{newName}}</div>
+
     <div>name: <input [(ngModel)]="babyname.name" placeholder="name"></div>
     <div>middle names: 
-        <!--<input [(ngModel)]="babyname.middle" placeholder="middle name">-->
         <ul *ngIf="babyname.middle">
             <li *ngFor="let middle of babyname.middle">
                 {{middle}}
@@ -15,4 +17,5 @@
     <div>meaning, details, etc: coming soon</div>
     <button (click)="goBack()">Back</button>
     <button (click)="save()">Save</button>
+    
 </div>
