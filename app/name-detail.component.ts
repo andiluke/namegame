@@ -42,6 +42,9 @@ export class NameDetailComponent implements OnInit{
 
     addMiddleName(newMiddle:string): void {
         newMiddle = newMiddle.trim();
+        if (!this.babyname.middle) {
+            this.babyname.middle = [];
+        }
         var errors = 0;
         if (newMiddle.length <= 0) {
             errors++;

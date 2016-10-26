@@ -13,7 +13,6 @@ global installs
 ToDos:
 * customize frontend
 * show something on save
-* bug: saving a middle name when none exist fails
 * clear field after middle name added
 * add/edit ratings
 * add names
