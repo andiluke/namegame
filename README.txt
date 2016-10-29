@@ -9,6 +9,8 @@ running
 global installs
 * mongodb (database)
 * nodemon (watches server/app file changes & restarts server as needed)
+* karma (testing)
+* jasmine-core (testing)
 
 ToDos:
 * customize frontend
@@ -30,6 +32,9 @@ helpful links
 * Angular tutorial https://angular.io/docs/ts/latest/tutorial/toh-pt1.html
 * Express routing: https://expressjs.com/en/guide/routing.html
 * mongo array (middle names): https://docs.mongodb.com/manual/reference/operator/update/push/
+
+testing:
+* http://karma-runner.github.io/0.12/intro/configuration.html
 
 name sites:
 http://www.behindthename.com/
