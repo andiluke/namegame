@@ -11,6 +11,7 @@ global installs
 * nodemon (watches server/app file changes & restarts server as needed)
 
 ToDos:
+* switch to NG CLI
 * customize frontend
 * show something on save
 * clear field after middle name added
@@ -29,6 +30,7 @@ helpful links
 * Angular tutorial https://angular.io/docs/ts/latest/tutorial/toh-pt1.html
 * Express routing: https://expressjs.com/en/guide/routing.html
 * mongo array (middle names): https://docs.mongodb.com/manual/reference/operator/update/push/
+* CLI reference https://www.sitepoint.com/ultimate-angular-cli-reference/
 
 name sites:
 http://www.behindthename.com/
